@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>ansible | 永远在路上 生命不息 学习不止 | 请道上大佬，多多指教</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ansible hello">
+    <meta name="description" content="AnsibleAnsible 基础 ANSIBLE_CONFIG  环境变量，可以定义配置文件的位置 ./ansible.cfg    存在于当前工作目录 ~/.ansible.cfg   存在于当前用户家目录 /etc/ansible/ansible.cfg 默认目录  Ansible命令主机要求：windows除外 配置语言：    yaml，json只有server role:ansible">
+<meta name="keywords" content="ansible hello">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ansible">
+<meta property="og:url" content="http://www.baidu.com/2019/04/05/ansible_mageedu/index.html">
+<meta property="og:site_name" content="永远在路上 生命不息 学习不止">
+<meta property="og:description" content="AnsibleAnsible 基础 ANSIBLE_CONFIG  环境变量，可以定义配置文件的位置 ./ansible.cfg    存在于当前工作目录 ~/.ansible.cfg   存在于当前用户家目录 /etc/ansible/ansible.cfg 默认目录  Ansible命令主机要求：windows除外 配置语言：    yaml，json只有server role:ansible">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-01T14:51:59.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ansible">
+<meta name="twitter:description" content="AnsibleAnsible 基础 ANSIBLE_CONFIG  环境变量，可以定义配置文件的位置 ./ansible.cfg    存在于当前工作目录 ~/.ansible.cfg   存在于当前用户家目录 /etc/ansible/ansible.cfg 默认目录  Ansible命令主机要求：windows除外 配置语言：    yaml，json只有server role:ansible">
+    
+        <link rel="alternate" type="application/atom+xml" title="永远在路上 生命不息 学习不止" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YuanFeng</h5>
+          <a href="mailto:yfxxaq@163.com" title="yfxxaq@163.com" class="mail">yfxxaq@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/love-fengyuan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ansible</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ansible</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-05T09:36:34.000Z" itemprop="datePublished" class="page-time">
+  2019-04-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ansible/">ansible</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ansible"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ansible</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ansible-基础"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Ansible 基础</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ansible命令"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Ansible命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#playbook"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">playbook</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#roles"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">roles</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-ansible_mageedu" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ansible</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-05 09:36:34" datetime="2019-04-05T09:36:34.000Z" itemprop="datePublished">2019-04-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ansible/">ansible</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h1><h2 id="Ansible-基础"><a href="#Ansible-基础" class="headerlink" title="Ansible 基础"></a>Ansible 基础</h2><ol>
+<li>ANSIBLE_CONFIG  环境变量，可以定义配置文件的位置</li>
+<li>./ansible.cfg    存在于当前工作目录</li>
+<li>~/.ansible.cfg   存在于当前用户家目录</li>
+<li>/etc/ansible/ansible.cfg 默认目录</li>
+</ol>
+<h2 id="Ansible命令"><a href="#Ansible命令" class="headerlink" title="Ansible命令"></a>Ansible命令</h2><p>主机要求：<br>windows除外</p>
+<p>配置语言：<br>    yaml，json<br>只有server</p>
+<p>role:<br>ansible 可以重复使用的</p>
+<p>Ansible:</p>
+<p><a href="https://github.com/ansible/ansible" target="_blank" rel="noopener">https://github.com/ansible/ansible</a></p>
+<p>从release下载安装包</p>
+<p>需要pip安装包的依赖</p>
+<p>log：</p>
+<p><a href="https://www.cnblogs.com/xielisen/p/6817807.html" target="_blank" rel="noopener">https://www.cnblogs.com/xielisen/p/6817807.html</a></p>
+<p>查看文件个数：<br>ls -l | grep ‘^-‘ | wc -l </p>
+<p>##################################马哥 Ansible</p>
+<p>文件传输<br>命令执行：应用部署，配置管理，任务流编排</p>
+<p>企业应用场景：<br>开发，测试，发布，生产，灰度环境（基于主机，用户，地区）</p>
+<p>vie0 修改主机ip</p>
+<p>ansible -m ping<br>m:模块<br>ansible 127.0.0.1 -m ping</p>
+<p>在 /etc/ansible/hosts中配置主机清单<br>测试网络通讯;<br>ansible 192.168.1.101 -m ping -k<br>输入口令（密码）<br>k: 密码认证<br>建议基于key验证<br>etc/ssh/sshd_config<br>ansible all -m ping<br>all: 代表主机清单的所有主机</p>
+<p>ansible.cfg<br>forks=5     并发执行5</p>
+<p>ansible-doc:显示模块命令</p>
+<p>ansible websevers –list-hosts<br>ansible all –list-host</p>
+<p>ansible debserver -m ping -u wang -k    以wang的身份去连接</p>
+<p>ansible debserver -m command -a ‘ls /root’ -u wang -k -b -K<br>以wang身份连接，切换到root用户权限，默认为root -K root口令</p>
+<p>usermod -a -G wheel wang 将wang加入到组</p>
+<p>K的口令;<br>sudo中：取消下面一行的注释：<br>%wheel ALL=(ALL)    NOPASSWD:ALL</p>
+<p>基于key验证</p>
+<p>ssh-keygen<br>ssh-copy-id 192.168.80.101<br>ssh-copy-id 192.168.80.102<br>…….</p>
+<p>&amp; linux中表示后台执行</p>
+<p>ansible all -m command -a “sleep 10”<br>休眠10s</p>
+<p>command:</p>
+<p> ansible all -a ‘ls /data’<br> ansible all -a ‘df -h’<br> ansible-doc command</p>
+<p> creates 存在不执行<br> ansible all -a ‘removes=/etc/fs cat /etc/fstab’<br> removes 不存在不执行</p>
+<p>ansible all -a ‘creates=/etc/fs cat /etc/fstab’</p>
+<p>chdir  切换文件夹<br>ansible all -a ‘chdir=/root ls’</p>
+<p>ansible 192.168.80.101 -a ‘/data/test.sh’<br>执行该主机上/data/test.sh<br>注： 注意规范 #！/bin/bash</p>
+<p>创建账号：<br>ansible all -a ‘useradd test1’<br>查询：<br>ansible all -a ‘getent passwd test1’</p>
+<p>command 命令对管道，重定向,变量 特殊符号支持有问题，建议shell</p>
+<p>shell：<br>ansible all -m shell -a ‘echo $HOSTNAME’</p>
+<p>更改口令:<br>ansible all -m shell -a ‘echo magedu|passwd –stdin test1’</p>
+<p>script：</p>
+<p>chmod +x test.sh</p>
+<p>ansible all -m script -a ‘/root/ansible/test.sh’<br>在所有主机上执行test.sh</p>
+<p>ansible all -a ‘getenforce’</p>
+<p>cp /etc/sysconfig/selinux &gt;<br>vim selinux </p>
+<p>copy:<br>ansible-doc -s copy</p>
+<p>ansible all -m copy -a ‘src=/root/ansible/selinux dest=/etc/selinux/config backup=yes’<br>文件复制</p>
+<p>ansible all -m shell -a ‘getenforce’</p>
+<p>ansible all -m copy -a ‘src=/etc/shadow dest=/data mode=000 owner=root’</p>
+<p>ansible all -m copy -a ‘content=”hello\n thanks \n “ dest=/data/f2’<br>直接写内容生成文件</p>
+<p>fetch：<br>从客户端去文件到服务器端，与copy相反</p>
+<p>ansible all -m fetch -a ‘src=/var/log/messages dest=/data’<br>从远程主机抓取log/message,到服务器，仅限单个文件</p>
+<p>ansible all -m shell -a ‘tar jcf log.tar.xz /var/log/*.log’</p>
+<p>包的加压与解压<br>archive<br>unarchive</p>
+<p>file：</p>
+<p>ansible all -m file -a ‘name=/data/f3 state=touch’  创建文件<br>ansible all -m file -a ‘name=/data/f3 state=absent’ 删除文件<br>ansible all -a ‘ls -l /data’</p>
+<p>ansible all -m file -a ‘name=/data/dir1 state=directory’    创建文件夹，’state=absent’ 删除</p>
+<p>‘src=/etc/fstab dest=/data/fstab.link state=link’   创建软连接<br>‘dest=/data/fstab.link state=absent’    删除软连接<br>‘dest=/data/* state=absent’ 删除所有文件<br>‘dest=/data/ state=absent’  删除文件夹<br>不能删除挂载点上的</p>
+<p>ansible 192.168.80.101 -m hostname -a ‘name=new_name’ 修改主机名</p>
+<p>cron：</p>
+<p>ansible all -m cron -a ‘minute=* weekday=1,3,5 job=”/usr/bin/wall FBI warning” name=warningcron’ 创建定时报警任务，写入crontab</p>
+<p>ansible all -m cron -a ‘disabled=true job=”/usr/bin/wall FBI warning” name=warningcron’ 禁用此任务，必须加name</p>
+<p>‘job=”/usr/bin/wall FBI warning” name=warningcron state=absent’ 删除</p>
+<p>yum<br>/etc/yum.repos/base.repo yum仓库配置</p>
+<p>ansible all -m yum -a ‘name=vsftpd’<br>安装<br>多个软件用’,’隔开<br>ansible all -m yun -a ‘list=instealled’ 安装过的列表</p>
+<p>‘name=vsftpd state=removed’卸载<br>‘name=vsftpd state=absent’</p>
+<p>‘rpm -q vsftpd’ 查找是否卸载</p>
+<p>安装下载好的软件；<br>ansible all -m copy -a ‘src=/data/softname dest=/root/‘<br>ansible all -a ‘ls /root/‘<br>ansbile all -m yum -a ‘name=/root/softname’</p>
+<p>disable_gpg_check=yes 忽略，禁用</p>
+<p>‘name=dstat update_cache=yes’ 更新缓存</p>
+<p>services:</p>
+<p>ansible all -m services -a ‘name=vsftpd state=started enabled=yes’<br>启动服务，同时设为开机启动  </p>
+<p>user:</p>
+<p>ansible all -m user -a ‘name=nginx shell=/sbin/nologin system=yes home=/var/nginx groups=root,bin uid=80 comment=”nginx service”‘<br>创建账号</p>
+<p>ansible all -m user -a ‘name=nginx state=absent remove=yes’ 删除账号，删除home目录</p>
+<p>group:</p>
+<p>ansible all -m group -a ‘name=nginx system=yes gid=80’<br>ansible all -a ‘getent group nginx’<br>ansible -m group -a ‘name=nginx state=absent’  删除</p>
+<p>ansible-galaxy:</p>
+<p>ansible-galaxy install geerlingguy.nginx</p>
+<p>yml/yaml:<br>注意缩进，格式</p>
+<pre><code>---
+-hosts:webserver
+remote_user:root
+
+tasks:
+    -name:hello
+    command：hostname
+</code></pre><p>ansible-playbook test.yaml</p>
+<p>ansible-vault:<br>ansible-vault encrypt test.yaml     对文件进行加密，避免敏感信息泄露</p>
+<p>需要设置加密口令,再次执行yaml时会报错，</p>
+<p>ansible-vault decrypt test.yaml     解密</p>
+<p>ansible-vault view test.yaml   查看yaml需要输入口令</p>
+<p>ansible-vault rekey test.yaml  修改密码</p>
+<p>ansible-vault create test2.yaml     创建新的playbook文件</p>
+<p>ansible-console:</p>
+<p>交互式：<br>ansible-console</p>
+<p>“root@all (3)[f:5]$ “ 并发数量为5也可以修改forks 10</p>
+<p>cd 192.168.80.135  切换到135主机</p>
+<p>hostname name=node2.magedu.com 修改主机名</p>
+<h2 id="playbook"><a href="#playbook" class="headerlink" title="playbook"></a>playbook</h2><p>playbook采用YAMl语言编写</p>
+<p>1.# test yaml 注释<br>2.缩进必须统一</p>
+<pre><code>---
+- hosts:webserver
+remote_user:root
+
+tasks:
+    - name:create new file  #描述
+    file:name=/data/newfile state=touch   模块/命令
+    - name:create new user
+    user: name=test2 
+    - name: install httpd
+    yum:name=httpd
+    - name:copy conf
+    copy:src=/etc/conf dest=/etc/conf
+    - name:start service
+    service:name=httpd state=started enables=yes
+</code></pre><p>ansible-playbook -C file.yml    # -C 检查</p>
+<p>ansible all -a ‘getent passwd test2’    #查看test2用户</p>
+<p>ansible all -m shell -a ‘ss -tln | grep :80’    #查看80端口</p>
+<p>ansible all -a ‘getent passwd test2’ –limit 192.168.80.134</p>
+<p>ansibel-playbook file.yml –list</p>
+<p>ansibel-playbook file.yml –list-tasks</p>
+<pre><code>- name:copy a file
+copy:src=files/test.py dest=/etc/test.py  #files相对路径，相对于当前目录
+</code></pre><p>注：文件修改后再次执行copy，不会生效</p>
+<p> 更新配置文件，执行playbook后，并不会生效</p>
+<pre><code>http.yml
+---
+- hosts: webserver
+remote_user:root
+tasks:
+    - name:install https package
+    yum:name-httpd
+    - name: copy conf file
+    copy: src=files/httpd.conf dest=/etc/httpd/conf baskup=yes
+    - name: start service
+    service: name=httpd state=started enabled=yes
+</code></pre><p>执行http.yml，修改配置文件后，执行不会重启</p>
+<pre><code>http.yml
+---
+- hosts: webserver
+  remote_user:root
+
+  tasks:
+    - name:install https package
+    yum:name-httpd
+    tag:inshttpd
+    - name: copy conf file
+    copy: src=files/httpd.conf dest=/etc/httpd/conf baskup=yes
+    notify:restart service
+    - name: start service
+    service: name=httpd state=started enabled=yes
+    tag:rshttpd
+
+  handlers:
+    - name: restart service
+      service: name=http state=restarted
+</code></pre><p>也可以同时触发两个任务</p>
+<p>tags：</p>
+<p>添加标签，可以单独执行标签<br>多个动作共用一个标签</p>
+<p>ansible-playbook -t rshttpd httpd.yml</p>
+<p>ansible-playbook -t inshttpd,rshttpd httpd.yml</p>
+<p>setup:</p>
+<p>ansible all -m setup -a ‘filter=ansible_hostname’</p>
+<p>ansible all -m setup -a ‘filter=<em>address</em>‘\</p>
+<p>ansible all -m setup -a ‘filter=ansible_all_ipv4_address’</p>
+<pre><code>app.yml
+---
+- hosts: webserver
+remote_user: root
+
+tasks:
+    - name: install packing
+    yum: name={{ pkname }}
+    - name: start service
+    service: name={{ pkname }} state=started enabled=yes
+</code></pre><p>ansible-playbook -e ‘pkname=httpd’ app.yml</p>
+<p>pkname 不会写死，灵活定义<br>也可以同时装多个包，用逗号隔开</p>
+<p>eg：</p>
+<pre><code>---
+- hosts:websever
+  remote_user: root
+
+  vars:
+    - pkname1: httpd
+    - pkname2: vsftpd
+  tasks:
+    - name:install pachage
+      yum: name={{ pkname1 }}
+    - name: install package
+      yum: name={{ pkname2 }}
+</code></pre><p>定义变量在playbook中，</p>
+<pre><code>hostname.yml:
+
+---
+- hosts: webserver
+  rempte_user: root
+
+  tasks:
+    - name: set hostname
+      hostname: name= www{{http_port}}.magedu.com
+</code></pre><p>hosts：</p>
+<p>[webserver:vars]<br>nodenamw=www<br>domainname=magedu.com</p>
+<p>此处的变量对webserver所有主机有效</p>
+<pre><code>tasks:
+  - name: set hostname
+    hostname：name={{nodename}}{{http_port}}.{{domasinname}}
+</code></pre><p>命令行优先级高于配置文件</p>
+<p>ansible all -m setup<br>ansible all -m setup -a ‘filter=”ansbile_fqdn”‘</p>
+<pre><code>var.yml
+
+---
+- hosts:webserver
+renote_use: root
+
+tasks:
+    - name: create a file
+    file: name=/data/{{ ansible_fqdn }}.log state=touch mode=600 owner=wang
+</code></pre><p>ansible-playbook -c var.yml</p>
+<p>vars.yml</p>
+<p>var1: httpd<br>var2: vsftpd</p>
+<pre><code>testvars.yml
+---
+- hosts: webserver
+  remote_user: root
+  vars_file:
+    - vars.yml
+  tasks:
+    - name：install package
+      yum: name={{ var1 }}
+    - name: create file
+      file: name= /data/{{ var2 }}.log state=touch
+</code></pre><p>## </p>
+<p>template.yml</p>
+<pre><code>---
+- hosts: webserver
+remote_user: root
+
+tasks: 
+    - name: install package
+    tum: name=nginx
+    - name: copy template
+    template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+    - name start service
+    service: name=nginx state=started enabled=yes
+</code></pre><p>ansible all -m shell -a ‘ss -ntpl’  #查看端口</p>
+<p>nginx.conf中修改:</p>
+<p>worker_processes NaN     #cpu个数的2次方</p>
+<p>修改template.yml</p>
+<pre><code>---
+- hosts: webserver
+remote_user: root
+
+tasks: 
+    - name: install package
+    tum: name=nginx
+    - name: copy template
+    template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+    notify: start service
+    - name start service
+    service: name=nginx state=started enabled=yes
+handlers:
+    - name: restart service
+      service: name=nginx state=restarted
+</code></pre><p>ansible all -m shell -a ‘ps aux | grep nginx’   #过滤nginx进程</p>
+<p>hosts：也可以写成如下模式</p>
+<p>[webserver]<br>192.168.80.134 http_port=81<br>192.168.80.135 http_port=82</p>
+<p>ansible-playbook -e ‘http_port=99’ testtemp.yml  #修改端口</p>
+<p>优先级：命令行&gt;playbook&gt;主机清单</p>
+<p>ansibel all -m setup -a ‘filte=ansible_os_family’</p>
+<p>‘filter=”<em>distribution</em>“‘</p>
+<p>#########</p>
+<p>testitem.yml</p>
+<pre><code>---
+- hosts: webserver
+remote_user: root
+
+tasks:
+    - name: create some files
+      file: name=/data/{{ item }} state=touch
+      when: ansible_distribution_major_version == &quot;7&quot;
+      with_items:
+        - file1
+        - file2
+        - file3
+
+    - name: install spme package
+      yum: name={{ item }}
+
+      with_items:
+        - htop
+        - sl
+        - hping3
+</code></pre><p>###</p>
+<p>create_group.yml</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - name: create some groups
+      group: name={{ item }}
+      when: ansible_distribution_major_version == &quot;7&quot;
+      with_items:
+        - g1
+        - g2 
+        - g3
+</code></pre><p>创建用户，并加入到组</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - name: create some groups
+      group: name={{ item }}
+      when: ansible_distribution_major_version == &quot;7&quot;
+      with_items:
+        - g1
+        - g2 
+        - g3
+    - name:create some users
+      user: name={{item.name}} group={{item.group}}
+      with_items:
+        - { name: &apos;user1&apos;, group: &apos;g1&apos; }
+        - { name: &apos;user2&apos;, group: &apos;g2&apos; }
+        - { name: &apos;user3&apos;, group: &apos;g3&apos; }
+</code></pre><p>##########</p>
+<p>for:</p>
+<p>testfor.yml</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+  vars:
+    ports:
+      - 81
+      - 82
+      - 83
+
+  tasks:
+    - name: copy conf
+      template: src=for1.conf.j2 dest=/data/for1.conf
+</code></pre><p>创建文件：for1.conf.j2</p>
+<pre><code>{% for port in ports %}
+    server{
+        listen {{ port }}
+    }
+    {% endfor %}
+</code></pre><hr>
+<p>修改为字典模式：</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+  vars:
+    ports:
+      - listen_port:81
+      - listen_port:82
+      - listen_port:83
+
+  tasks:
+    - name: copy conf
+      template: src=for2.conf.j2 dest=/data/for1.conf   
+</code></pre><p>for2.conf.j2</p>
+<pre><code>{% for port in ports %}
+    server{
+        listen {{ port.listen_port }}
+    }
+    {% endfor %}
+</code></pre><hr>
+<pre><code>---
+- hosts: all
+  remote_user: root
+  vars:
+    ports:
+      - web1:
+        port: 81
+        name: web1.magedu.com
+        rootdir: /data/website1
+      - web2:
+        port: 83
+        name: web2.magedu.com
+        rootdir: /data/website2
+      - web3:
+        port: 83
+        name: web3.magedu.com
+        rootdir: /data/website3
+
+  tasks:
+    - name: copy conf
+      template: src=for3.conf.j2 dest=/data/for1.conf 
+</code></pre><p>for3.conf.j22</p>
+<pre><code>{% for p in ports %}
+    server{
+        listen {{ p.port }}
+        servername {{ p.name }}
+        documentroot {{ p.rootdir }}
+    }
+    {% endfor %}
+</code></pre><hr>
+<pre><code>---
+- hosts: all
+  remote_user: root
+  vars:
+    ports:
+      - web1:
+        port: 81
+        #name: web1.magedu.com
+        rootdir: /data/website1
+      - web2:
+        port: 83
+        name: web2.magedu.com
+        rootdir: /data/website2
+      - web3:
+        port: 83
+        #name: web3.magedu.com
+        rootdir: /data/website3
+
+  tasks:
+    - name: copy conf
+      template: src=for4.conf.j2 dest=/data/for4.conf
+</code></pre><p>for4.conf.j22</p>
+<pre><code>{% for p in ports %}
+    server{
+        listen {{ p.port }}
+    {% if p.name is defined %}
+        servername {{ p.name }}
+    {% endif %}
+        documentroot {{ p.rootdir }}
+    }
+    {% endfor %}
+</code></pre><h2 id="roles"><a href="#roles" class="headerlink" title="roles"></a>roles</h2><p>创建roles文件夹：</p>
+<p>mkdir roles<br>mkdir roles/{httpd, mysql, memcache} -pv</p>
+<p>mkdir roles/nginx</p>
+<p>ansible all -m shell -a ‘rpm -q nginx’</p>
+<p>‘getent group nginx’<br>‘userdel -f nginx’ 删除用户，组</p>
+<p>cd nginx<br>mkdir tasks templates</p>
+<p>cd tasks<br>vim group.yml</p>
+<pre><code>- name:create group
+  group: name=nginx gid=80
+</code></pre><p>vim user.yml</p>
+<pre><code>- name: create user
+  user: name=nginx group=nginx system=yes shell=/sbin/nologin uid=80
+</code></pre><p>vim yum.yml</p>
+<pre><code>- name: install package
+  yum: name=nginx
+</code></pre><p>vim start.yml</p>
+<pre><code>- name: start service
+  service: name=nginx state=started enabled=yes
+</code></pre><p>vim restart.yml</p>
+<pre><code>- name: restart service
+  sservice: name=nginx  state=restarted
+</code></pre><p>templates:</p>
+<p>nginx.conf.j2(nginx.conf重命名为此)</p>
+<p>vim temp.yml</p>
+<pre><code>- name: copy conf
+  template: src=nginx.conf.j2 dest=/etc/ngiunx/nginx.conf
+</code></pre><p>vim main.yml</p>
+<pre><code>- include: group.yml
+- include: user.yml
+- include: yum.yml
+- include: temp.yml
+- include: start.yml
+</code></pre><p>调用的剧本与roles同级</p>
+<p>vim nginx_role.yml</p>
+<pre><code>- hosts: all
+  remote_usr: root
+
+  roles:
+    - role: nginx
+</code></pre><p>ansibel-playbook -c nginx_role.yml</p>
+<hr>
+<p>httpd_roles</p>
+<p>mkdir tasks</p>
+<p>vim user.yml</p>
+<pre><code>- name: create user
+  user: name=apache system=yes shell=/sbin/nologin
+</code></pre><p>vim copyfile.yml</p>
+<pre><code>- name: copy file
+  file: src= dest=
+</code></pre><hr>
+<p>httpd：</p>
+<p>tasks：</p>
+<p>vim user.yml</p>
+<pre><code>- name: create user
+  user: name=apache system=yes shell=/sbin/nologin
+</code></pre><p>vim copyfile.yml</p>
+<pre><code>- name: copy file
+  copy: src=httpd.conf dest=/data/
+</code></pre><p>vim main.yml</p>
+<pre><code>- include: user.yml
+- include: copyfile.yml
+</code></pre><p>vim httpd_role.yml</p>
+<pre><code>- hosts: all
+  remote_user: root
+
+  roles:
+    - role: httpd
+</code></pre><p>在一个角色中，调用另一个角色</p>
+<p>vim some_role.yml</p>
+<pre><code>- hosts: all
+  remote_user：root
+
+  roles:
+    - role: http
+    - role: nginx
+</code></pre><p> 一个角色引用另一个角色中的任务<br>在main.yml中添加一行</p>
+<pre><code>- include: roles/httpd/tasks/copyfileyml
+</code></pre><p>此处需要注意路径的选择</p>
+<p>ansible.cfg</p>
+<p>当playbook失败的情况下，一个重试文件将会创建，后缀为retry，默认开启此功能</p>
+<p>添加标签：<br>some_role.yml</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+
+  roles:
+    - { role: httpd, tags:[&apos;web&apos;, &apos;httpd&apos;] }    #即属于web，也属于httpd
+    - { role: nginx, tags:[&apos;web&apos;, &apos;nginx&apos;] }
+</code></pre><p>ansible-playbook -t web some_role.yml   #只执行标签web</p>
+<p>some_role.yml</p>
+<pre><code>---
+- hosts: all
+  remote_user: root
+
+  roles:
+    - { role: httpd, tags:[&apos;web&apos;, &apos;httpd&apos;] }    #即属于web，也属于httpd
+    - { role: nginx, tags:[&apos;web&apos;, &apos;nginx&apos;] , when: ansible_distribution_major_version == &apos;7&apos;}    # 当版本为7的时候执行
+</code></pre><hr>
+<p>mkdir app<br>cd app<br>mkdir tasks templates vars handlers files</p>
+<p>task:</p>
+<p>vim group.yml</p>
+<pre><code>- name: create group
+  group: name=app system=yes gid=123
+</code></pre><p>vim user.yml</p>
+<pre><code>- name: create user
+  user: name=app group=app system=yes shell=/sbin/nologin uid=1223
+</code></pre><p>vim yum.yml</p>
+<pre><code>- name: isntall package
+  yum: name=httpd
+</code></pre><p>vim templ.yml</p>
+<pre><code>- name: copy conf
+  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+  notify: restart service
+</code></pre><hr>
+<p>vars:<br>main.yml    </p>
+<pre><code>username:app
+groupname: app
+</code></pre><hr>
+<p>handlers:<br>vim main.yml</p>
+<pre><code>- name: restart service
+  service: name=httpd state=restarted
+</code></pre><hr>
+<p> tasks:<br> vim start.yml</p>
+<pre><code>- name: start service
+  service: name=httpd state=started enabled=yes
+</code></pre><p>vim copyfile.yml</p>
+<pre><code>- name: copy config
+  copy: src=vhosts.conf dest=/etc/httpd/conf.d/ owner=app
+</code></pre><p>vim main.yml</p>
+<pre><code>- include: group.yml
+- include: user.yml
+- include: yum.yml
+- include: templ.yml
+- include: copyfile.yml
+- include: start.yml
+</code></pre><hr>
+<p>files:<br>touch vhosts.conf</p>
+<hr>
+<p>app_role.yml</p>
+<pre><code>- hosts: all
+  remote_user: root
+
+  roles:
+    - app
+</code></pre><p>memcached:</p>
+<p>yum install memcached</p>
+<p>cat /etc/sysconfig/memcached</p>
+<p>cp /etc/sysconfig/memcached templates/memcached.j2<br>修改：<br>CACHESIZE=”NaN“</p>
+<p>vim tasks/yum.yml</p>
+<pre><code>- name: install package
+  yum: name=memcached
+</code></pre><p>vim taska/start.yml</p>
+<pre><code>- name: start service
+  service: name=memcached state=started enabled=yes
+</code></pre><p>vim /tasks/templ.yml</p>
+<pre><code>- name: copy conf
+  templates: src=memcached.j2 dest=/etc/sysconfig/memcached
+</code></pre><p>vim tasks/main.yml</p>
+<pre><code>- include: yum.yml
+- include: templ.yml
+- include: start.yml
+</code></pre><p>vim memcached_role.yml</p>
+<pre><code>- hosts: all
+  remote_user: root
+
+  roles:
+    - memcached
+</code></pre><p>ansible-playbook -C memecached_role.yml<br>ansible-playbook memcached_role.yml</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-01T14:51:59.814Z" itemprop="dateUpdated">2019-05-01 14:51:59</time>
+</span><br>
+
+
+        
+        生命不息，学习不止，URL：<a href="/2019/04/05/ansible_mageedu/" target="_blank" rel="external">http://www.baidu.com/2019/04/05/ansible_mageedu/</a>
+        
+    </div>
+    <footer>
+        <a href="http://www.baidu.com">
+            <img src="/img/avatar.jpeg" alt="YuanFeng">
+            YuanFeng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansible-hello/">ansible hello</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.baidu.com/2019/04/05/ansible_mageedu/&title=《ansible》 — 永远在路上 生命不息 学习不止&pic=http://www.baidu.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.baidu.com/2019/04/05/ansible_mageedu/&title=《ansible》 — 永远在路上 生命不息 学习不止&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.baidu.com/2019/04/05/ansible_mageedu/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ansible》 — 永远在路上 生命不息 学习不止&url=http://www.baidu.com/2019/04/05/ansible_mageedu/&via=http://www.baidu.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.baidu.com/2019/04/05/ansible_mageedu/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/04/05/plan/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">plan</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>YuanFeng &copy; 2019</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.baidu.com/2019/04/05/ansible_mageedu/&title=《ansible》 — 永远在路上 生命不息 学习不止&pic=http://www.baidu.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.baidu.com/2019/04/05/ansible_mageedu/&title=《ansible》 — 永远在路上 生命不息 学习不止&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.baidu.com/2019/04/05/ansible_mageedu/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ansible》 — 永远在路上 生命不息 学习不止&url=http://www.baidu.com/2019/04/05/ansible_mageedu/&via=http://www.baidu.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.baidu.com/2019/04/05/ansible_mageedu/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aQY7CMAwF0Ln/pZktI0T5tsNITV5XCLXBrwsTx/75ia/H0/X6zfP31/cnn19XW3ZhYGDclvG4vK7veQ0lfxHXMeSxYWBgnMN4t3QS6DxpJun4Q8wYGBgYxXsSWHXjiIGBgbEqCV4D8g0oBgYGRq+IvV4o2RReP/VPtTgGBsYNGauKzG98/kp/AwMD41aMR/G6LlCrW8NJJH/WwcDA2JqxqgGZH9Llr6YcDwYGxqaMpCxMxr96ibjKflsMY2BgbM1YNWxRbQxUj+GiIz8MDIxNGb2WQD5OUU3ZzTYDBgbG1ow8weVbw+rhWt4ijbazGBgYWzN6y80TbrJmucGJgYGxHSN5eFmjsVWyRiQMDIxjGPnM1aqW5HyDiIGBsTejF9bk59cWsVFHAgMD4+aM3tjE92roaoMTAwPjTEY1zeWjFfmLGKV1DAyMwxj5wVmvfB0l1uquEwMD47aMvIidBJ2v1tsmYmBg7M1IGoqTo/9kUCwfLPvwixgYGMcwemNbk0J02WoYGBjHMHrNgGoZ3Gt5Rv1YDAyMYxi9AYjqoV7yspJnMTAw9mY8ilcyWlFNsguGYjEwMLZmTBqck4GMXpmaj25gYGDsx6gm2d7Rfz7glceAgYFxGqN3oN9rPU7+AQqNAQwMjIMZvVB6gxeF7SkGBgZGPDqWNEEnSXbUwsTAwLg5YxJWdTtYHeyIjvYwMDC2ZsxT3gQ8SbIYGBgHMH4BJbwD8ZAMWhAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '小可爱，快回来吧！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

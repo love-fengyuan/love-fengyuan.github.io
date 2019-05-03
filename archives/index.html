@@ -1,792 +1,502 @@
-
 <!DOCTYPE html>
-<html lang="zh">
-
-
-
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <script>
-    window.themeRuntime = {
-      root: "/",
-      scriptsMap: {},
-      init: {
-        status: false
-      },
-      commentRest: {
-        status: false
-      },
-      versions: {
-        theme: "2.0.3",
-        mdui: "0.4.0",
-        fetch: "3.0.0",
-        es6promise: "4.2.5+7f2b526d",
-        lightgallery: "1.0.1",
-        smoothscroll: "15.2.0"
-      }
-      
-    };
-    console.info("%cCopyright © 2018 - " + new Date().getFullYear() +" Halyul\n"+'Theme Version: ' + themeRuntime.versions.theme +'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
-  </script>
-  <!--
-        © HEXO MDUI Theme
-        https://github.com/Halyul/hexo-theme-mdui
-        -->
+    
 
-  <meta charset="UTF-8">
-  <title>归档 - ON THE WAY</title>
+    
 
-  <!-- Favicons -->
-  <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
-  <link rel="icon" sizes="192x192" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/favicon.png">
+    
 
-  <!-- Meta & Info -->
-  <meta http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <meta name="theme-color" content="#fff">
 
-  <meta name="author" content="YuanFeng">
-  
-      <meta name="description" content="永远在路上 生命不息 学习不止">
-  
-  <meta name="keywords" content="blog, hexo, mdui">
-
-  <!--iOS -->
-  <meta name="apple-mobile-web-app-title" content="ON THE WAY">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="480">
-
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <!-- The Open Graph protocol -->
-  <meta property="og:url" content="http://yoursite.com">
-  <meta property="og:type" content="blog">
-  <meta property="og:title" content="归档 - ON THE WAY | ON THE WAY">
-  <meta property="og:image" content="/images/favicon.png">
-  
-    <meta property="og:description" content="永远在路上 生命不息 学习不止">
-  
-
-  
-
-  
-
-  <!-- Import CSS -->
-  
-    <link rel="stylesheet" href="/css/mdui.css">
-  
-
-  
-
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Archives | 永远在路上 生命不息 学习不止 | 请道上大佬，多多指教</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta property="og:type" content="website">
+<meta property="og:title" content="永远在路上 生命不息 学习不止">
+<meta property="og:url" content="http://www.baidu.com/archives/index.html">
+<meta property="og:site_name" content="永远在路上 生命不息 学习不止">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="永远在路上 生命不息 学习不止">
+    
+        <link rel="alternate" type="application/atom+xml" title="永远在路上 生命不息 学习不止" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 </head>
 
+<body>
+    <div id="loading" class="active"></div>
 
-<body class="mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
-
-  <style>
-    #spinner {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-          opacity: 1;
-      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-          transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-    }
-    main {
-      opacity: 0;
-      -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-      transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
-      display: none;
-    }
-  </style>
-  <div id="spinner">
-    <style>
-      .spinner {
-
-      -webkit-animation: rotator 1.4s linear infinite;
-              animation: rotator 1.4s linear infinite;
-      }
-
-      @-webkit-keyframes rotator {
-      0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(270deg);
-                transform: rotate(270deg);
-      }
-      }
-
-      @keyframes rotator {
-      0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(270deg);
-                transform: rotate(270deg);
-      }
-      }
-
-      .path {
-      stroke-dasharray: 187;
-      stroke-dashoffset: 0;
-      -webkit-transform-origin: center;
-              transform-origin: center;
-      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-              animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-      }
-
-      @-webkit-keyframes colors {
-      0% {
-        stroke: #4285F4;
-      }
-      25% {
-        stroke: #DE3E35;
-      }
-      50% {
-        stroke: #F7C223;
-      }
-      75% {
-        stroke: #1B9A59;
-      }
-      100% {
-        stroke: #4285F4;
-      }
-      }
-
-      @keyframes colors {
-      0% {
-        stroke: #4285F4;
-      }
-      25% {
-        stroke: #DE3E35;
-      }
-      50% {
-        stroke: #F7C223;
-      }
-      75% {
-        stroke: #1B9A59;
-      }
-      100% {
-        stroke: #4285F4;
-      }
-      }
-
-      @-webkit-keyframes dash {
-      0% {
-        stroke-dashoffset: 187;
-      }
-      50% {
-        stroke-dashoffset: 46.75;
-        -webkit-transform: rotate(135deg);
-                transform: rotate(135deg);
-      }
-      100% {
-        stroke-dashoffset: 187;
-        -webkit-transform: rotate(450deg);
-                transform: rotate(450deg);
-      }
-      }
-
-      @keyframes dash {
-      0% {
-        stroke-dashoffset: 187;
-      }
-      50% {
-        stroke-dashoffset: 46.75;
-        -webkit-transform: rotate(135deg);
-                transform: rotate(135deg);
-      }
-      100% {
-        stroke-dashoffset: 187;
-        -webkit-transform: rotate(450deg);
-                transform: rotate(450deg);
-      }
-      }
-    </style>
-    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-    </svg>
-  </div>
-
-  <main>
-    <div class="mdui-appbar mdui-appbar-fixed mdui-color-white mdui-shadow-0 theme-appbar">
-  <div class="mdui-toolbar theme-toolbar-top">
-    
-      <a href="/" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--arrow">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </a>
-    
-  </div>
-  <div class="mdui-toolbar theme-toolbar-bottom">
-    <span class="theme-toolbar-bottom__title">ON THE WAY</span>
-    
-      <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
-        <i class="mdui-icon material-icons">&#xe8b6;</i>
-      </a>
-    
-  </div>
-  <div class="mdui-progress theme-appbar__progress" id="progressBar">
-    <div class="mdui-progress-indeterminate"></div>
-  </div>
-</div>
-
-    <div class="mdui-drawer mdui-drawer-full-height theme-drawer" id="drawer">
-  <!-- header -->
-  <div class="theme-drawer__header">
-  <div class="theme-drawer__header__layer-1">
-    <div class="mdui-toolbar theme-toolbar-top">
-      
-        <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--drawer theme-appbar__burger--arrow" id="drawer-back">
-          <i class="mdui-icon">
-            <span></span>
-          </i>
+    <aside id="menu">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
         </a>
-      
+        <hgroup class="introduce">
+          <h5 class="nickname">YuanFeng</h5>
+          <a href="mailto:yfxxaq@163.com" title="yfxxaq@163.com" class="mail">yfxxaq@163.com</a>
+        </hgroup>
+      </div>
     </div>
-    <div class="mdui-toolbar theme-toolbar-bottom">
-      <span class="theme-toolbar-bottom__title">ON THE WAY</span>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/love-fengyuan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
     </div>
   </div>
-  <div class="theme-drawer__header__layer-2" style="background-image: url(/images/bg.png)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="/images/avatar.png">
-    <div class="theme-drawer__header__layer-2__user__info">
-      <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
-        YuanFeng
-      </div>
-      <div class="theme-drawer__header__layer-2__user__info__slogan mdui-text-color-white-secondary">
-        I&#39;m your slogan!
-      </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Archives</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
-  </div>
+</header>
+<header class="content-header archives-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Archives</h1>
+        <h5 class="subtitle">
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap fade">
+    
+
+    
+            
+            <h3 class="archive-separator">五月, 2019</h3>
+            <div class="waterfall">
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-01 19:50:35" datetime="2019-05-01T19:50:35.879Z" itemprop="datePublished">2019-05-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/kubernetes/">kubernetes</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/02/test/">alleowj</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello/">hello</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
+
+    </div>
+    
+  </article>
 </div>
 
-  <div class="theme-drawer__warpper">
-    <!-- content -->
-    <div class="theme-drawer__warpper__content">
-  <ul class="mdui-list">
-    <a href="/" class="mdui-list-item mdui-ripple mdui-ripple-white">
-      <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
-      <div class="mdui-list-item-content">首页</div>
-    </a>
-    <a href="/archives/" class="mdui-list-item mdui-ripple mdui-ripple-white">
-      <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
-      <div class="mdui-list-item-content">归档</div>
-    </a>
-    <ul class="mdui-list mdui-collapse" mdui-collapse="{accordion: true}">
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-01 10:11:04" datetime="2019-05-01T10:11:04.731Z" itemprop="datePublished">2019-05-01</time>
+
       
-        <div class="mdui-collapse-item ">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
-            <div class="mdui-list-item-content">分类</div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list">
-            
-              <a href="/categories/hello/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                hello
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
-              </a>
-            
-              <a href="/categories/lvs/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                lvs
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
-              </a>
-            
-              <a href="/categories/ansible/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                ansible
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>2</span>
-              </a>
-            
-          </div>
-        </div>
-      
-      
-        <div class="mdui-collapse-item ">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-            <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
-            <div class="mdui-list-item-content">标签</div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-          </div>
-          <div class="mdui-collapse-item-body mdui-list">
-            
-              <a href="/tags/hello/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                hello
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
-              </a>
-            
-              <a href="/tags/lvs/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                lvs
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>1</span>
-              </a>
-            
-              <a href="/tags/ansible/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
-                ansible
-                <div style="flex-grow: 1;"></div>
-                <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption>2</span>
-              </a>
-            
-          </div>
-        </div>
-      
-      <div class="mdui-collapse-item ">
-        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-          <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
-          <div class="mdui-list-item-content">年份</div>
-          <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-        </div>
-        <div class="mdui-collapse-item-body mdui-list">
-          
-          
-            <a href="/archives/2019/" class="mdui-list-item mdui-ripple">
-              2019
-            </a>
-          
-        </div>
-      </div>
-    </ul>
-  </ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/lvs/">lvs</a></li></ul>
+
+
+
+    </div>
+    
+
+
   
-    <div class="mdui-divider"></div>
-    <ul class="mdui-list" mdui-collapse="{accordion: true}">
-      
-        
-          
-            <a href="/friends" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">&#xe0ba;</i>
-              
-              
-              <div class="mdui-list-item-content">Test1</div>
-            </a>
-        
-      
-        
-          
-            <a href="/apply-for-link" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-child mdui-text-center"></i>
-              
-              
-              
-              <div class="mdui-list-item-content">Test2</div>
-            </a>
-        
-      
-        
-          
-            <a href="/galleries" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
-          
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test3</div>
-            </a>
-        
-      
-        
-          <div class="mdui-collapse-item">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
-              
-              
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-              
-              
-              <div class="mdui-list-item-content">Test4</div>
-              <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-            </div>
-            <div class="mdui-collapse-item-body mdui-list">
-              
-                
-                  <a href="/myfriends" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST1
-                  </a>
-              
-                
-                  <a href="/timeline" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
-                
-                    TEST2
-                  </a>
-              
-            </div>
-          </div>
-        
-      
-    </ul>
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/01/LVS_magedu/">LVS</a>
+    </h3>
   
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lvs/">lvs</a></li></ul>
+
+    </div>
+    
+  </article>
 </div>
 
-    <div class="theme-spacer"></div>
-    <!-- footer -->
-    <div class="theme-drawer__warpper__footer">
-  <div class="mdui-typo mdui-typo-caption-opacity">
-    Powered by <a href="http://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme - <a href="//github.com/Halyul/hexo-theme-mdui" target="_blank">Halyul/MDUI</a>
-    <br>
-    <span>
-      Copyright ©
-      <span year></span>
-      YuanFeng
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-01 10:11:04" datetime="2019-05-01T10:11:04.718Z" itemprop="datePublished">2019-05-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ansible/">ansible</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/01/DG_dagang_mage/">大纲</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansible-plan/">ansible plan</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-05-01 09:43:25" datetime="2019-05-01T09:43:25.619Z" itemprop="datePublished">2019-05-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/hello/">hello</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/01/hello-world/">Hello World</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello/">hello</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+    
+            </div> 
+            <h3 class="archive-separator">四月, 2019</h3>
+            <div class="waterfall">
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-04-05 09:36:34" datetime="2019-04-05T09:36:34.000Z" itemprop="datePublished">2019-04-05</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/plan-other/">plan other</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/04/05/plan/">plan</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">plan</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2019-04-05 09:36:34" datetime="2019-04-05T09:36:34.000Z" itemprop="datePublished">2019-04-05</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ansible/">ansible</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/04/05/ansible_mageedu/">ansible</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansible-hello/">ansible hello</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+    
+    </div>
+
+    
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-    
-    
-      <br>
-      <span>
-        最后更新于: 5月 01, 2019
-      </span>
-    
-    
-  </div>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>YuanFeng &copy; 2019</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.baidu.com/archives/&title=永远在路上 生命不息 学习不止&pic=http://www.baidu.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.baidu.com/archives/&title=永远在路上 生命不息 学习不止&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.baidu.com/archives/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=永远在路上 生命不息 学习不止&url=http://www.baidu.com/archives/&via=http://www.baidu.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.baidu.com/archives/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABtUlEQVR42u3aQY7DIAwF0N7/0pkDjJp+Y3Cj6rGKmiY8srBsw+sVjysYyVP/775ODFxc3DY3QSS/5HO9u44+BC4u7iA3f/U9N1/k/fvf/o6Li/tIbp+Oi4v729wkKVkLlLi4uE/g5oFmF/14rYaLi9vg9tsZ/esj/V1cXNwl7lUc/WZoa3ZcXNwRbh5Q8o2WtUZqMi8uLu4k9/52EoCS0JYfvCgEUFxc3APcPKGphq21zdpWRoaLi7uVWy1pqri8SfrhKVxc3HHuPWXX8Yu1XAUXF3eSu5aC5CFp77YNLi7uDHetaFkrYJJGyYd0BxcXd5ybpCnnNlmjoImLizvCLfwpSGX6LdekRYKLizvJrZY0ScFzZDsWFxd3kJuEsGrSkyc0hVYsLi7uIDeZYK0Eqi4+Kn5wcXFHuHkikqcj1aMbUaDExcU9zL2KI39Dv7jCxcX9FrdTuqwtvlpQLS4GFxe3zV07NpE3OPpbL4WvgouLu5W79zhFtF1abLLg4uI+mZt3XKoLiEojXFzcB3P7TY38KVxc3G9x86CTBKPOsx8+Fi4u7gh37VBFp0m6a1sXFxf3APcPqzGaeVJzCsUAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
-<script type="text/javascript">
-  var copyrightNow = new Date().getFullYear();
-  var textContent = document.querySelector('span[year]')
-  
-    textContent.textContent = copyrightNow
-  
-</script>
 
-  </div>
-</div>
 
-    <div id="top"></div>
 
-    <script src="/js/lightgallery.min.js"></script>
 
-    <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="archive">
-        
-  
-<div class="theme-archive">
-  <div class="theme-archive__index">
-    <div class="theme-archive__header">
-      <div class="theme-archive__header__bg">
-        <img class="mdui-img-fluid mdui-img-rounded" src="/images/bg.png">
-      </div>
-      <div class="theme-archive__header__content" style="background-color:#eeeeee">
-        <img class="mdui-img-circle theme-archive__header__avatar" src="/images/avatar.png">
-        <div class="theme-archive__header__info">
-          <div class="theme-archive__header__name">
-            YuanFeng
-          </div>
-          <div class="theme-archive__header__slogan">
-            I&#39;m your slogan!
-          </div>
-        </div>
-        <div class="theme-spacer mdui-hidden-sm-down"></div>
-        
-          <button class="theme-archive__header__button mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}">联系我</button>
-        
-      </div>
-    </div>
-    <div class="theme-archive__items mdui-container-fluid">
-      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
-        分类
-      </div>
-      <div class="mdui-row">
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/categories/hello/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-teal">
-                <div class="mdui-card-media" style="background-image: url(/images/random/11.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">hello</div>
-                  <div class="theme-archive__items__length">
-                    
-                      1 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/categories/lvs/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-pink">
-                <div class="mdui-card-media" style="background-image: url(/images/random/12.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">lvs</div>
-                  <div class="theme-archive__items__length">
-                    
-                      1 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/categories/ansible/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-green">
-                <div class="mdui-card-media" style="background-image: url(/images/random/11.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">ansible</div>
-                  <div class="theme-archive__items__length">
-                    
-                      2 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-    <div class="theme-archive__items mdui-container-fluid">
-      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
-        标签
-      </div>
-      <div class="mdui-row">
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/tags/hello/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-light-blue">
-                <div class="mdui-card-media" style="background-image: url(/images/random/35.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">hello</div>
-                  <div class="theme-archive__items__length">
-                    
-                      1 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/tags/lvs/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-teal">
-                <div class="mdui-card-media" style="background-image: url(/images/random/22.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">lvs</div>
-                  <div class="theme-archive__items__length">
-                    
-                      1 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/tags/ansible/" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-light-green">
-                <div class="mdui-card-media" style="background-image: url(/images/random/30.png)"></div>
-                <div class="theme-archive__items__content">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">ansible</div>
-                  <div class="theme-archive__items__length">
-                    
-                      2 篇文章
-                    
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-    <div class="theme-archive__items mdui-container-fluid">
-      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
-        年份
-      </div>
-      <div class="mdui-row">
-        
-          
-          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
-            <a href="/archives/2019" target="_self" class="theme-link--no-style">
-              <div class="mdui-card mdui-color-deep-orange">
-                <div class="mdui-card-media" style="background-image: url(/images/random/30.png)"></div>
-                <div class="theme-archive__items__content theme-archive__items__content--no-length">
-                  <img class="mdui-img-circle theme-archive__items__avatar" src="/images/avatar.png">
-                  <div class="theme-archive__items__text-title">2019</div>
-                </div>
-              </div>
-            </a>
-          </div>
-        
-      </div>
-    </div>
-  </div>
-  
-    <div class="mdui-dialog" id="contactDialog">
-      <div class="mdui-dialog-title">
-        如何联系我
-      </div>
-      <div class="mdui-dialog-content">
-        <div class="mdui-list">
-          
-            <a href="https://twitter.com" title="Twitter" class="mdui-list-item mdui-ripple" target="_blank">
-              
-                <i class="mdui-list-item-icon mdui-icon fa fa-twitter mdui-text-center"></i>&emsp;
-              
-              
-              
-              Twitter
-            </a>
-          
-            <a href="https://facebook.com" title="Facebook" class="mdui-list-item mdui-ripple" target="_blank">
-              
-              
-              
-                <i class="mdui-list-item-icon"></i>&emsp;
-              
-              Facebook
-            </a>
-          
-        </div>
-      </div>
-      <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-          关闭
-        </button>
-      </div>
-    </div>
-  
-  <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
-
-</div>
-<script type="text/javascript">
-  themeRuntime.scriptsMap.archive = [];
-  (function() {
-    var fabTopFlag = false;
-    var fabEl = document.getElementById('index-fab');
-    function fabShowHide() {
-      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (bodyScrolled > 0 && !fabTopFlag) {
-        fabEl.classList.remove('mdui-fab-hide');
-        fabTopFlag = true;
-      } else if (bodyScrolled === 0 && fabTopFlag) {
-        fabEl.classList.add('mdui-fab-hide');
-        fabTopFlag = false;
-      }
-    }
-    fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archive.push(listener)
-  })();
-</script>
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-    window.addEventListener("scroll", parallaxImg)
-    function parallaxImg(){
-      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      document.querySelector('.theme-archive__header__bg img')
-        .style.transform = 'translateY(' + bodyScrolled * 0.4 + 'px)';
-    }
-    var listener = {
-      function: parallaxImg,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archive.push(listener)
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
-      </div>
-    </div>
-  </main>
-
-  <div id="outdated" style="z-index: 9999;">
-    <h6>你的浏览器已经过气辣！</h6>
-    <p>赶紧升级浏览器来访问本站吧！<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">现在就去</a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
-  </div>
-  <!-- import js -->
-
-
-  <script src="/js/outdatedbrowser.min.js"></script>
-
-
-
-  
-    <script src="/js/js.barba.min.js"></script>
-    <script type="text/javascript">
-      Barba.Utils.errorPageUrl = '/404.html';
-    </script>
-  
-
-
-<!-- theme js -->
-<script type="text/javascript">
-  (function() {
-    var appbarTopFlag = false;
-    var appbarEl = document.querySelector('.theme-appbar');
-    function appbarShadow() {
-      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      if (bodyScrolled > 0 && !appbarTopFlag) {
-        appbarEl.classList.add('theme-appbar--shadow');
-        appbarTopFlag = true;
-      } else if (bodyScrolled === 0 && appbarTopFlag) {
-        appbarEl.classList.remove('theme-appbar--shadow');
-        appbarTopFlag = false;
-      }
-    }
-    appbarShadow()
-    window.addEventListener('scroll', appbarShadow);
-  })();
-</script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
-<script type="text/javascript">
-  document.querySelector('body').classList.add('theme-loaded')
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '小可爱，快回来吧！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
 </script>
 
 
