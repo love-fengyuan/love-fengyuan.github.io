@@ -150,6 +150,109 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-git_server" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-05 21:42:35" datetime="2019-05-05T21:42:35.000Z" itemprop="datePublished">2019-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/git/">git</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/06/git_server/">git服务器搭建</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Git服务器搭建github是免费托管代码开源的远程仓库。若不想公开代码，又不想付费，就只能创建自己的git服务器作为仓库使用。使用一台运行的linux的计算机，通过apt命令行就可以完成安装。
+1.安装git安装git:
+    sudo apt-get install git
+创建一个git用户组和用户，用来运行git：
+    groupadd git
+    useradd git ...
+    
+
+        <a href="/2019/05/06/git_server/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/">server</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-redis" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-05 21:05:14" datetime="2019-05-05T21:05:14.000Z" itemprop="datePublished">2019-05-05</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/redis/">redis</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/06/redis/">Redis介绍与基本使用</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        1.Redis 介绍实现缓存的方式，有多种，本地内存缓存，数据库缓存，文件系统缓存。这里介绍使用Redis数据库进行缓存。Redis是什么？
+​      REmote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。
+​      Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基...
+    
+
+        <a href="/2019/05/06/redis/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-django" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -177,7 +280,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        NULL
+
     
 
         <a href="/2019/05/06/django/" class="post-more waves-effect waves-button">
@@ -280,6 +384,55 @@ Nginx特点
         <a href="/2019/05/06/python_design_pattern/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-django_cookie_session" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-01 19:30:43" datetime="2019-05-01T19:30:43.000Z" itemprop="datePublished">2019-05-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/django/">django</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/02/django_cookie_session/">django中的cookie，session</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Django中的cookie和sessionCookies ：是浏览器为 Web 服务器存储的一小段信息。 每次浏览器从某个服务器请求页面时，它收到服务器回发送过来的cookies。它保存在浏览器下的某个文件夹下。 
+Session：Django的Session机制会向请求的浏览器发送cookie字符串。同时也会保存到本地一份，用来验证浏览器登录是否为同一用户。它存在于服务器，Django默...
+    
+
+        <a href="/2019/05/02/django_cookie_session/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li></ul>
+
     </div>
     
 </article>
@@ -522,115 +675,15 @@ hexo new &quot;postName&quot;
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-plan" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-04-05 09:36:34" datetime="2019-04-05T09:36:34.000Z" itemprop="datePublished">2019-04-05</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/plan-other/">plan other</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/04/05/plan/">plan</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        planQ:web压力测试工具
-A:Apache JMeter // Web Application Stress Tool // gatling // locust
-autoMysql / Mongodb / RedisTomact  NginxKubernetes / Dockerpython shellAnsible/ Puppet / SaltStack / FabricZabbix...
-    
-
-        <a href="/2019/04/05/plan/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">plan</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-ansible" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-03-10 15:06:52" datetime="2019-03-10T15:06:52.000Z" itemprop="datePublished">2019-03-10</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ansible/">ansible</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/03/10/ansible/">ansible</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        AnsibleAnsible 基础
-ANSIBLE_CONFIG  环境变量，可以定义配置文件的位置
-./ansible.cfg    存在于当前工作目录
-~/.ansible.cfg   存在于当前用户家目录
-/etc/ansible/ansible.cfg 默认目录
-
-Ansible命令主机要求：windows除外
-配置语言：    yaml，json只有server
-role:ansi...
-    
-
-        <a href="/2019/03/10/ansible/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ansible/">ansible</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 
