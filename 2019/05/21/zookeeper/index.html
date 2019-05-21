@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>zookeeper入门 | 永远在路上 生命不息 学习不止 | 请道上大佬，多多指教</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="zookeeper">
+    <meta name="description" content="zookeeper介绍ZooKeeper是一种用于分布式应用程序的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以构建这些原语，以实现更高级别的服务，以实现同步，配置维护以及组和命名。它被设计为易于编程，并使用在熟悉的文件系统目录树结构之后设计的数据模型。它在Java中运行，并且具有Java和C的绑定。 众所周知，协调服务很难做到。他们特别容易出现比赛条件和死锁等错误。ZooKeep">
+<meta name="keywords" content="zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zookeeper入门">
+<meta property="og:url" content="http://www.baidu.com/2019/05/21/zookeeper/index.html">
+<meta property="og:site_name" content="永远在路上 生命不息 学习不止">
+<meta property="og:description" content="zookeeper介绍ZooKeeper是一种用于分布式应用程序的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以构建这些原语，以实现更高级别的服务，以实现同步，配置维护以及组和命名。它被设计为易于编程，并使用在熟悉的文件系统目录树结构之后设计的数据模型。它在Java中运行，并且具有Java和C的绑定。 众所周知，协调服务很难做到。他们特别容易出现比赛条件和死锁等错误。ZooKeep">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-21T00:27:28.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zookeeper入门">
+<meta name="twitter:description" content="zookeeper介绍ZooKeeper是一种用于分布式应用程序的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以构建这些原语，以实现更高级别的服务，以实现同步，配置维护以及组和命名。它被设计为易于编程，并使用在熟悉的文件系统目录树结构之后设计的数据模型。它在Java中运行，并且具有Java和C的绑定。 众所周知，协调服务很难做到。他们特别容易出现比赛条件和死锁等错误。ZooKeep">
+    
+        <link rel="alternate" type="application/atom+xml" title="永远在路上 生命不息 学习不止" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YuanFeng</h5>
+          <a href="mailto:yfxxaq@163.com" title="yfxxaq@163.com" class="mail">yfxxaq@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/love-fengyuan" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">zookeeper入门</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">zookeeper入门</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-20T22:30:43.000Z" itemprop="datePublished" class="page-time">
+  2019-05-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#zookeeper介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">zookeeper介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#zookeeper-api"><span class="post-toc-number">2.</span> <span class="post-toc-text">zookeeper_api</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#zookeeper安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">zookeeper安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#zookeeper的扩容与缩容"><span class="post-toc-number">4.</span> <span class="post-toc-text">zookeeper的扩容与缩容</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#扩容"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">扩容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集群容错（奇偶数节点问题）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">集群容错（奇偶数节点问题）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-zookeeper" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">zookeeper入门</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-20 22:30:43" datetime="2019-05-20T22:30:43.000Z" itemprop="datePublished">2019-05-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/zookeeper/">zookeeper</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="zookeeper介绍"><a href="#zookeeper介绍" class="headerlink" title="zookeeper介绍"></a>zookeeper介绍</h2><p>ZooKeeper是一种用于分布式应用程序的分布式开源协调服务。它公开了一组简单的原语，分布式应用程序可以构建这些原语，以实现更高级别的服务，以实现同步，配置维护以及组和命名。它被设计为易于编程，并使用在熟悉的文件系统目录树结构之后设计的数据模型。它在Java中运行，并且具有Java和C的绑定。</p>
+<p>众所周知，协调服务很难做到。他们特别容易出现比赛条件和死锁等错误。ZooKeeper背后的动机是减轻分布式应用程序从头开始实施协调服务的责任</p>
+<h2 id="zookeeper-api"><a href="#zookeeper-api" class="headerlink" title="zookeeper_api"></a>zookeeper_api</h2><p>ZooKeeper的设计目标之一是提供一个非常简单的编程接口。因此，它仅支持以下操作：</p>
+<ul>
+<li><p>create：在树中的某个位置创建一个节点</p>
+</li>
+<li><p>delete：删除节点</p>
+</li>
+<li><p>exists：测试某个位置是否存在节点</p>
+</li>
+<li><p>get data：从节点读取数据</p>
+</li>
+<li><p>set data：将数据写入节点</p>
+</li>
+<li><p>get children：检索节点的子节点列表</p>
+</li>
+<li><p>sync：等待传播数据</p>
+</li>
+</ul>
+<h2 id="zookeeper安装"><a href="#zookeeper安装" class="headerlink" title="zookeeper安装"></a>zookeeper安装</h2><p>docker安装zookeeper</p>
+<p>docker search zookeeper</p>
+<p>docker pull zookeeper   #拉取镜像</p>
+<p>docker run –privileged=true -d –name zookeeper –publish 2181:2181  -d zookeeper:latest   #启动容器并添加映射</p>
+<h2 id="zookeeper的扩容与缩容"><a href="#zookeeper的扩容与缩容" class="headerlink" title="zookeeper的扩容与缩容"></a>zookeeper的扩容与缩容</h2><h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><h3 id="集群容错（奇偶数节点问题）"><a href="#集群容错（奇偶数节点问题）" class="headerlink" title="集群容错（奇偶数节点问题）"></a>集群容错（奇偶数节点问题）</h3><p>如ZooKeeper入门指南中所述，容错群集设置至少需要三台服务器，强烈建议您使用奇数个服务器。</p>
+<p>通常三台服务器对于生产安装来说已经足够了，但为了在维护期间获得最大可靠性，您可能希望安装五台服务器。使用三台服务器时，如果对其中一台服务器执行维护，则在维护期间，您很容易在其他两台服务器上发生故障。如果你有五个正在运行，你可以拿一个进行维护，并且知道如果其他四个中的一个突然失败你仍然可以。</p>
+<p>参考：<a href="http://blog.itpub.net/31441024/viewspace-2212546/" target="_blank" rel="noopener">http://blog.itpub.net/31441024/viewspace-2212546/</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-21T00:27:28.152Z" itemprop="dateUpdated">2019-05-21 00:27:28</time>
+</span><br>
+
+
+        
+        生命不息，学习不止
+        
+    </div>
+    <footer>
+        <a href="http://www.baidu.com">
+            <img src="/img/avatar.jpeg" alt="YuanFeng">
+            YuanFeng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/">zookeeper</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.baidu.com/2019/05/21/zookeeper/&title=《zookeeper入门》 — 永远在路上 生命不息 学习不止&pic=http://www.baidu.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.baidu.com/2019/05/21/zookeeper/&title=《zookeeper入门》 — 永远在路上 生命不息 学习不止&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.baidu.com/2019/05/21/zookeeper/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《zookeeper入门》 — 永远在路上 生命不息 学习不止&url=http://www.baidu.com/2019/05/21/zookeeper/&via=http://www.baidu.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.baidu.com/2019/05/21/zookeeper/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/21/zabbix/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/18/iptables/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">iptables入门</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>YuanFeng &copy; 2019</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.baidu.com/2019/05/21/zookeeper/&title=《zookeeper入门》 — 永远在路上 生命不息 学习不止&pic=http://www.baidu.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.baidu.com/2019/05/21/zookeeper/&title=《zookeeper入门》 — 永远在路上 生命不息 学习不止&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.baidu.com/2019/05/21/zookeeper/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《zookeeper入门》 — 永远在路上 生命不息 学习不止&url=http://www.baidu.com/2019/05/21/zookeeper/&via=http://www.baidu.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.baidu.com/2019/05/21/zookeeper/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3aQY7DIAwF0Ln/pTMHqJr+jwPTkR6rqongkYVlY35+4nG9jPyd5J+HBy4u7ph73Y6E8vr7df58Sx8+DS4u7kFussxk+XcfKDfg4uJ+M7fNQ9pPgIuL+x+5k6D2FXEXFxc35ibFz/1Ez6ZKD9RquLi4A26esuz7veV8FxcXd4l7lWOypfvDkWh1XFzcI9w8oLSN0snTD2/i4uIe5E5arUn6kic3o1oNFxd3zM0PLtcuVeTbqDMyXFzcg9z7KeoFlq5ovP2IuLi4R7hJkGrLlbb4aa9w4eLi/i13suSkq1OnXLi4uI9y50lGW/a083zo/ODi4m7jzq9V5Ret8vbM21oNFxd3MzdZuJjodoZ58wYXF/ckd61NkrdMkiXXto2Li7uPmycxbcHTbiM6MMXFxT3OzYuTtim7diEjKn5wcXG3cZPcJ09W8jBXZ2G4uLibuVc58jRlcmGr6P3i4uJu4LZXItpj0yQxatMsXFzcM9w2eLUJzeRpHX1xcXEf5eYXL5Kmy2IdlsdUXFzcL+O2xU++vShtwsXF/UrufJNtUCs6P7i4uI9yJ1cn87brWiDDxcU9z21DyWTS+w08fL6Li4u7wv0Fu20LCZihFKQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '小可爱，快回来吧！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
